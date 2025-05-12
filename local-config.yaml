@@ -1,0 +1,11 @@
+log:
+  level_stream: "DEBUG"
+  level_file: "DEBUG"
+inference:
+  max_tokens: -1
+  log_probs: 1
+  url: http://192.168.1.2:8080
+extractor:
+  context: true
+  max_clusters: 25
+  verbose: false
