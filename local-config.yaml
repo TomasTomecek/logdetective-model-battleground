@@ -1,6 +1,7 @@
 log:
   level_stream: "DEBUG"
   level_file: "DEBUG"
+  format: "%(asctime)s - %(levelname)s - %(message)s"
 inference:
   max_tokens: -1
   log_probs: 1

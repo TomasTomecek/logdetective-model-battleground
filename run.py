@@ -11,10 +11,11 @@ try:
 except IndexError:
     config_path = "./local-config.yaml"
 os.environ["LOGDETECTIVE_SERVER_CONF"] = config_path
+
 try:
     output_suffix = sys.argv[2]
 except IndexError:
-    output_suffix = ""
+    output_suffix = "."
 
 from logdetective.server.gitlab import generate_mr_comment
 from logdetective.server.llm import perform_staged_analysis
@@ -55,7 +56,7 @@ async def main():
             staged_response = await perform_staged_analysis(session, log_text=log_text)
             job = flexmock(id="1", project_url="https://gitlab.foobar.baz/", project_name="foo")
             short_comment = await generate_mr_comment(job, log_url, staged_response, full=True)
-            outfile = get_unique_name(f"{output_suffix}{name}")
+            outfile = get_unique_name(f"{output_suffix}/{name}")
             with open(outfile, "w") as fd:
                 fd.write(short_comment)
             # print(short_comment)
