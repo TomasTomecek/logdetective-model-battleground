@@ -6,6 +6,8 @@ We are generting the full Gitlab MR comment with them.
 Right now we have results here from 2 models:
 1. [gemma 3](/gemma3-12b/)
 2. [gemini 2.5 flash](/gemini-2.5-flash/)
+3. [Mistral-7B-Instruct-v0.2/](/Mistral-7B-Instruct-v0.2/)
+4. [granite 3.3 8b](/granite-3.3-8b/)
 
 ## Usage
 
